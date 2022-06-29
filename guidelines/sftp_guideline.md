@@ -12,10 +12,25 @@ This protocol can be launched either as a command line or through a graphical us
 
 For this purpose, we recommend (Filezilla)[https://filezilla-project.org/]. This software allows to connect to a FTP server, download and upload files and all with a friendly graphic layout.
 
+## Connectiong to a server
+
+Each Relecov-user has its own ID and password with they might connect to Relecov sFTP server. As example:
+
+```
+ Server: sftprelecov.isciii.es
+ Username: COD-MAD-2100
+ Password: 12345
+```
+
+You cand use the quickconnect bar for establishing the connection, like que figure X.
+
+![Figure 1](images/figure1.PNG)
 
 
 
-Each Relecov-user has its own ID and password with they might connect and upload several need files:
+
+
+
 - fastq
 - metadata
 - mdsum
