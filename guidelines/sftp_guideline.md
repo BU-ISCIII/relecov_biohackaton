@@ -35,7 +35,7 @@ FileZilla will now try to connect to the server. If all works well, you will not
 
 In figure 2, we can note the FileZilla layout. 
 
-![Figure 2](images/provisional_img.png)
+![Figure 2](images/figure2.png)
 
 We explain a quick introduction:
 - Below the toolbar (1) and quick connect bar (2), the message log (3) displays transfer and connection related messages.
@@ -43,9 +43,17 @@ We explain a quick introduction:
 
 ## Transferring files
 
-Now we will upload these files (or the ones you choose, respectively):
+Now we might upload the files required for the Relecov platform:
 
-- fastq
-- metadata
-- mdsum
+```
+- fastq.gz
+- metadata.xlsx
+- mdsum.md5
+```
+First, the **fastq data**. We need the raw data and in ```.gz```compressed format with the correct sample name. We remind to only use alpha-numeric characters and if you need to separate names, we strongly recommend ```_``` character. Second, the metadata in ```.xlsx``` format. Lastly, ```mdsum.md5 file```. This is a checksum file used to verify the integrity of a upload/downloaded file. It stores a hash code for every fastq file, which is created from an algorithm based on the number of bits in the file.
 
+## Uploading
+
+First - in the local pane - bring the directory into view which contains data to be uploaded to Relecov server (e.g. *fastq.gz, metadata.xlsx and mdsum.md5*). Now, navigate to your specific target directory on the server (using the server pane's file listings). To upload the data, select the respective files and drag them from the local to the remote pane. You will notice that the files will be added to the transfer queue at the bottom of the window and soon thereafter they were uploaded to the server. The uploaded desired files should now be displayed in the Relecov server content listing at the right side of the window.
+
+![Figure 3](images/figure3.png)
