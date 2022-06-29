@@ -12,7 +12,7 @@ This protocol can be launched either as a command line or through a graphical us
 
 For this purpose, we recommend (Filezilla)[https://filezilla-project.org/]. This software allows to connect to a FTP server, download and upload files and all with a friendly graphic layout.
 
-## Connectiong to a server
+## Connectiong to Relecov server
 
 Each Relecov user has its own ID and password with they might connect to Relecov sFTP server. As example:
 
