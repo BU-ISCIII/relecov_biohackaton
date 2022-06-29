@@ -14,25 +14,38 @@ For this purpose, we recommend (Filezilla)[https://filezilla-project.org/]. This
 
 ## Connectiong to a server
 
-Each Relecov-user has its own ID and password with they might connect to Relecov sFTP server. As example:
+Each Relecov user has its own ID and password with they might connect to Relecov sFTP server. As example:
 
 ```
- Server: sftprelecov.isciii.es
+ Host: sftprelecov.isciii.es
  Username: COD-MAD-2100
  Password: 12345
+ Port: 50122
 ```
 
-You cand use the quickconnect bar for establishing the connection, like que figure X.
+You can use the quickconnect bar for establishing the connection, like the figure 1.
 
 ![Figure 1](images/figure1.PNG)
 
+Enter the hostname into the quickconnect bar's *Host*: sftprelecov.isciii.es, the username into the *Username*: COD-MAD-2100, the password into the *Password*: 12345 as well as *Port*: 50122. Now click on *Quickconnect*.
 
+FileZilla will now try to connect to the server. If all works well, you will notice that the right "column" switched from Not connected to any server to displaying a list of files and directories.
 
+## Navigating and window layout
 
+In figure 2, we can note the FileZilla layout. 
 
+![Figure 2](images/provisional_img.png)
+
+We explain a quick introduction:
+- Below the toolbar (1) and quick connect bar (2), the message log (3) displays transfer and connection related messages.
+- Below, you can find the file listings. The left column (local pane, 4) displays the local files and directories, i.e. your local PC files. The right column (server pane, 5) displays the files and directories on the Relecov server you are connected to. Both columns have a directory tree at the top and a detailed listing of the currently selected directory's contents at the bottom. You can easily navigate either of the trees and lists by clicking around like in any other file manager. At the bottom of the window, the transfer queue (6) lists the to-be-transferred and already transferred files.
+
+## Transferring files
+
+Now we will upload these files (or the ones you choose, respectively):
 
 - fastq
 - metadata
 - mdsum
 
-There are several options to connect by sFTP and we recommend use the software (Filezilla)[https://download.filezilla-project.org/client/FileZilla_3.60.1_win64_sponsored2-setup.exe]. This software is free
