@@ -377,20 +377,34 @@ samtools mpileup -A -Q 0 ${BAM} | ivar consensus -p test.fasta -q ${q} -t ${0} -
 
 <p>
   <center>
-    <img src="https://github.com/jlorsal/relecov_biohackaton/blob/ion_torrent/group4/images/FASTQ_IonTorrent_base-qual_encoding.png" width=75%" />
+    <img src="./images/FASTQ_IonTorrent_base-qual_encoding.png" width=75%" />
     </center>
 </p>
 
-- FASTQ automatically detects this encoding and shows the corresponding Sanger/Illumina 1.9 equivalente encoding:
+- FASTQ automatically detects this encoding:
 
 <p>
   <center>
-  <img src="https://github.com/jlorsal/relecov_biohackaton/blob/ion_torrent/group4/images/FASTQ_IonTorrent_phred-like-encoding.png" width="75%" />
+  <img src="./images/fastqc_it.png" width="75%" />
   </center>
 </p>
-
+                                               
 ...
 
+Also, it seems that .bam files from S5 do not contain ~ symbol
 
+```
+bamtofastq -i IonXpress_001_rawlib.bam -fq IonXpress_001_rawlib.fastq
+```
 
+This seems to be corrected in the mpileup file:
 
+<p>
+  <center>
+    <img src="./images/new_bam.png" width=75%" />
+    </center>
+</p>
+
+Now 241 varian is in the consensus:
+
+`MN908947.3	241	.	C	T	.	PASS	DP=1424	GT:REF_DP:REF_RV:REF_QUAL:ALT_DP:ALT_RV:ALT_QUAL:ALT_FREQ	1:1:1:22:1423:687:23:0.999298`
