@@ -377,7 +377,7 @@ samtools mpileup -A -Q 0 ${BAM} | ivar consensus -p test.fasta -q ${q} -t ${0} -
 
 <p>
   <center>
-    <img src="https://github.com/jlorsal/relecov_biohackaton/blob/ion_torrent/group4/images/FASTQ_IonTorrent_base-qual_encoding.png" width=75%" />
+    <img src="./images/FASTQ_IonTorrent_base-qual_encoding.png" width=75%" />
     </center>
 </p>
 
@@ -393,4 +393,14 @@ samtools mpileup -A -Q 0 ${BAM} | ivar consensus -p test.fasta -q ${q} -t ${0} -
 
 Also, it seems that .bam files from S5 do not contain ~ symbol
 
+```
+bamtofastq -i IonXpress_001_rawlib.bam -fq IonXpress_001_rawlib.fastq
+```
 
+This seems to be corrected in the mpileup file:
+
+<p>
+  <center>
+    <img src="./images/new_bam.png" width=75%" />
+    </center>
+</p>
