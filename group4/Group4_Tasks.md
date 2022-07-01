@@ -385,7 +385,7 @@ samtools mpileup -A -Q 0 ${BAM} | ivar consensus -p test.fasta -q ${q} -t ${0} -
 
 <p>
   <center>
-  <img src="https://github.com/jlorsal/relecov_biohackaton/blob/ion_torrent/group4/images/FASTQ_IonTorrent_phred-like-encoding.png" width="75%" />
+  <img src="./images/fastqc_it.png" width="75%" />
   </center>
 </p>
 
