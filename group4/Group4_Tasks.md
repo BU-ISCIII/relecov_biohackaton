@@ -381,16 +381,16 @@ samtools mpileup -A -Q 0 ${BAM} | ivar consensus -p test.fasta -q ${q} -t ${0} -
     </center>
 </p>
 
-- FASTQ automatically detects this encoding and shows the corresponding Sanger/Illumina 1.9 equivalente encoding:
+- FASTQ automatically detects this encoding:
 
 <p>
   <center>
   <img src="./images/fastqc_it.png" width="75%" />
   </center>
 </p>
-
+                                               
 ...
 
-
+Also, it seems that .bam files from S5 do not contain ~ symbol
 
 
