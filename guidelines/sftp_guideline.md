@@ -57,3 +57,15 @@ First, the **fastq data**. We need the raw data and in ```.gz```compressed forma
 First - in the local pane - bring the directory into view which contains data to be uploaded to Relecov server (e.g. *fastq.gz, metadata.xlsx and mdsum.md5*). Now, navigate to your specific target directory on the server (using the server pane's file listings). To upload the data, select the respective files and drag them from the local to the remote pane. You will notice that the files will be added to the transfer queue at the bottom of the window and soon thereafter they were uploaded to the server. The uploaded desired files should now be displayed in the Relecov server content listing at the right side of the window.
 
 ![Figure 3](images/figure3.png)
+
+> Note: If you don't like using drag-and-drop, you can also right click on files/directories (in the lower local pane) and select *Upload* to upload them - or simply double-click a file entry (this does not work for directories).
+
+## Downloading
+
+Downloading files, or complete directories, works essentially the same way as uploading - you just drag the files/directories from the remote pane to the local pane this time, instead of the other way round.
+
+> Note: In case you (accidentally) try to overwrite a file during upload or download, FileZilla will by default display a dialog asking what to do (overwrite, rename, skip...).
+
+## FAQs
+
+
