@@ -404,3 +404,6 @@ This seems to be corrected in the mpileup file:
     <img src="./images/new_bam.png" width=75%" />
     </center>
 </p>
+
+Now 241 varian is in the consensus:
+`MN908947.3	241	.	C	T	.	PASS	DP=1424	GT:REF_DP:REF_RV:REF_QUAL:ALT_DP:ALT_RV:ALT_QUAL:ALT_FREQ	1:1:1:22:1423:687:23:0.999298`
