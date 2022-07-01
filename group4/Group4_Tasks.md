@@ -2,7 +2,7 @@
   
 ## I Relecov Biohackathon
 ## Group 4
-Participants: Joan Gibert Fernández, Joan R Grande, José Miguel Lorenzo Salazar, Sarai Varona Fernández.
+Participants: Joan Gibert Fernández, Joan R. Grande, José Miguel Lorenzo Salazar, Sarai Varona Fernández.
 
 ## Tasks
 
@@ -14,9 +14,9 @@ Participants: Joan Gibert Fernández, Joan R Grande, José Miguel Lorenzo Salaza
 
 ## Hackathon in detail
 <ul>
-  <li><a href="#Day1">Day 1</a></i>
-  <li><a href="#Day2">Day 2</a></i>
-  <li><a href="#Day3">Day 1</a></i>
+  <li><a href="#Day1">Day 1 (June 29, 2022)</a></i>
+  <li><a href="#Day2">Day 2 (June 30, 2022</a></i>
+  <li><a href="#Day3">Day 3 (July 1, 2022)</a></i>
 </ul>
 
 ---
@@ -52,7 +52,6 @@ Available at Galaxy: [](https://https//aries.iss.it)
 
 <img src="../group4/images/sars-cov-2-recovery.png" />
 
-
 ---
 
 - **A Novel SARS-CoV-2 Viral Sequence Bioinformatic Pipeline Has Found Genetic Evidence That the Viral 3′ Untranslated Region (UTR) Is Evolving and Generating Increased Viral Diversity**
@@ -66,7 +65,6 @@ Carlos Farkas et al. (2021).
 [GitHub]( https://github.com/cfarkas/SARS-CoV-2-freebayes)
 
 [Galaxy Project](https://usegalaxy.org/u/carlosfarkas/h/snpeffsars-cov-2)
-
 
 ---
 
@@ -86,7 +84,6 @@ Singularity images
 
 <img src="../group4/images/journal.pone.0262953.g001.PNG" width="75%" />
 
-
 ---
 
 - **Ion torrent-based nasopharyngeal swab metatranscriptomics in COVID-19**
@@ -101,7 +98,6 @@ Workflow:
 
 <img src="../group4/images/1-s2.0-S0166093420301403-gr1_lrg.jpg" />
 
-
 ---
 
 - **Comparison of Illumina MiSeq and the Ion Torrent PGM and S5 platforms for whole-genome sequencing of picornaviruses and caliciviruses**
@@ -111,6 +107,16 @@ Rachel L. Marine et atl. (2020).
 [DOI](https://doi.org/10.1016/j.jviromet.2020.113865)
 
 [Journal](https://www.sciencedirect.com/science/article/pii/S0166093420301178)
+
+---
+
+- **SARS-CoV-2 Whole-Genome Sequencing by Ion S5 Technology—Challenges, Protocol Optimization and Success Rates for Different Strains**
+
+Maria Szargut et al. (2022).
+
+[DOI](https://doi.org/10.3390%2Fv14061230)
+
+[Journal](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9227152/)
 
   <p align="right" dir="auto">
    <a href="#home" title="Up">
@@ -134,7 +140,7 @@ Rachel L. Marine et atl. (2020).
   </ol>
 - Test directly with the FASTQ files provided (if any) into Viral-Recon.
 - Set a BaseQuality filter (?) and other possible filters (depending on the noise within the input reads, specially in indels) in the config of Viral-Recon.
-- ...
+- Sarai and Joan provided examples of FASTQ obtained with IonTorrent technologies.
 
   <p align="right" dir="auto">
    <a href="#home" title="Up">
@@ -151,7 +157,8 @@ Rachel L. Marine et atl. (2020).
 ### Task 3: Software Implementation
 
 - Check if a UBam-to-FASTQ is needed depending on the IonTorrent datasets provided.
-- ...
+- Several outputs are expected: FASTQ (if the user knows how to download files in this format from the sequencing platform), uBAM and BAM.
+- We will need to test TMAP and IRMA.
 
 **Tools to preprocess the Ion Torrent FASTQ files in case they are provided as BAM or uBAM**
 
@@ -218,10 +225,19 @@ cat ${FASTQ} | grep '^@.*/1$' -A 3 --no-group-separator > ${FASTQ1}
 cat ${FASTQ} | grep '^@.*/2$' -A 3 --no-group-separator > ${FASTQ2}
 ```
 
-Tools used with IonTorrent data:
-- [IRMA, Iterative Refinement Meta-Assembler (from CDC)](wonder.cdc.gov/amd/flu/irma)
-- [TMAP, Torrent Mapping Alignment Program (GitHub repository)](https://github.com/iontorrent/TS/tree/master/Analysis/TMAP)
+---
 
+> Tools used with IonTorrent data
+
+<ul>
+  <li><a href="https://wonder.cdc.gov/amd/flu/irma/">IRMA, Iterative Refinement Meta-Assembler (from CDC):</li>
+  <ul>
+    <li><a href="https://github.com/peterk87/irma">IRMA GitHub.</a></li>
+    <li><a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-3030-6">IRMA paper.</a></li>
+    <li><a href="https://github.com/peterk87/irma/blob/master/IRMA_RES/defaults.sh">IRMA default values.</a></li>
+  </ul>
+  <li><a href="https://github.com/iontorrent/TS/tree/master/Analysis/TMAP">TMAP, Torrent Mapping Alignment Program (GitHub repository).</a></li>
+</ul>
 
 
   <p align="right" dir="auto">
@@ -235,7 +251,7 @@ Tools used with IonTorrent data:
 **Experiments**
 
 - Run ViralRecon with FASTQ from the HERA QCs.
-- Run IRMA with FASTQ.
+- Run IRMA with FASTQ files.
 
   <p align="right" dir="auto">
    <a href="#home" title="Up">
@@ -270,7 +286,6 @@ Tools used with IonTorrent data:
 **Experimental code for TMAP**
 
 ```Bash
-
 # Define dirs and files
 refdir="dir-to-reference"
 ref="NC_045512.2.fasta"
@@ -324,6 +339,39 @@ m=10
 BAM="test.sorted.mapped.bam"
 FASTA="test.fasta"
 samtools mpileup -A -Q 0 ${BAM} | ivar consensus -p test.fasta -q ${q} -t ${0} -m ${10}
+```
+
+  <p align="right" dir="auto">
+   <a href="#home" title="Up">
+    <img src="../group4/images/home-icon.png" style="max-width: 100%;">
+   </a>
+ </p>
+
+---
+
+> Wrap up of Day 2
+
+- We tested 10 FASTQ files from Ion Torrent technology from the HERA QC with ViralRecon.
+- We compared the global results provided by Nexclade-web. The lineages/clades match is total (10 out of 10).
+- At the nucleotide level, we saw some divergences across the viral genome, probably related to how IonTorrent (IRMA?) and ViralRecon process the allele frequencies at the variant calling and consensus steps.
+- We suggest widening the benchmarking using tens of samples (provided by Joan) to find other mismatches and study in detail some of the discrepancies (i.e. nucleotides close to primer ends, deletions of two and three AA, etc.).
+- We clean-the-house at the sFTP site to upload more IonTorrent files for Day 3.
+- We need the IonTorrent SARS-CoV-2 protocol primer manifest BED files!
+
+  <p align="right" dir="auto">
+   <a href="#home" title="Up">
+    <img src="../group4/images/home-icon.png" style="max-width: 100%;">
+   </a>
+ </p>
+ 
+---
+
+<a name="Day3"></a>
+### Day 3
+
+<!-- ************************** SECTION HERE -->
+
+> SyncUP meeting in the morning:
 
 ...
 
