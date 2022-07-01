@@ -68,4 +68,5 @@ Downloading files, or complete directories, works essentially the same way as up
 
 ## FAQs
 
-
+- **How do you name the samples?**
+Check always the samples names before upload them. Always use alphanumerical and *_* to separate the words you want to include and compressed format *.gz*. Pair reads must be signaled with a *R1* and *R2* respectively. As an example for pair end: *COD_MAD_2100_1_R1.fastq.gz* and *COD_MAD_2100_1_R2.fastq.gz*.
