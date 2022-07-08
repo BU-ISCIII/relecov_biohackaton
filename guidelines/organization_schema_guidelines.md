@@ -70,7 +70,16 @@ If, on top of the above example, we had a category such as "Host Gender", that w
 
 Note that this can be named with "NA" or similars as well. We will try and modify them afterwards so they have the same format.
 
-* **Outer**: 
+* **Outer**: this category contains those fields that, though available from your institution, are not placed in the same file as the rest of the metadata you provided.
+  
+As the last **example**, for some institution, the field "FIELD" is placed in another file you sent along with the rest of the metadata.
+
+
+
+Note that the process is complex.
+
+
+
 However, how does the module detect which schema to use? This is thanks to the next resource
 
 * Presence of your organization name in the
