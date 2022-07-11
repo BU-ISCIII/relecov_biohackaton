@@ -68,22 +68,37 @@ If, on top of the above example, we had a category such as "Host Gender", that w
 }
 ```
 
-Note that this can be named with "NA" or similars as well. We will try and modify them afterwards so they have the same format.
+Note that this empty value can also be named with "NA" or similars as well. We will try and modify them afterwards so they have the same format.
 
 * **Outer**: this category contains those fields that, though available from your institution, are not placed in the same file as the rest of the metadata you provided.
   
 As the last **example**, for some institution, the field "FIELD" is placed in another file you sent along with the rest of the metadata.
 
+Given this example, 
 
 
-Note that the process is complex.
+## Presence of your organization name in the institution_to_schema file
 
+Once you have your institution's schema ready, the next step is really easy. It consists on setting the rules that allow the recognition of your file name, in order to automatically link them to the correct schema to use. The idea behind this is that the laboratory metadata will contain a recognisable string (a name, a code) that will identify the schema to use. Let's pretend that our metadata file was named `ITER_metadata_lab.x'. In such case, the ITER part would tell us that this metadata comes from Instituto Tecnoológico y de Energías Renovables in Tenerife. For the program to identify this, the (institution to schema file)[https://github.com/GuilleGorines/relecov-tools/blob/develop/relecov_tools/schema/institution_to_schema.json] in the relecov-tools repository would need something like this:
 
+```
+{
+    "ITER" : "HUNSC-ITER.json",
+    "HUNSC-ITER" : "HUNSC-ITER.json",
+}
+```
+In this case, the key in the `json` file is the string we want to detect in our file, and the value is the schema that we need to homogeneize our metadata (just its name, no need to add the absolute path or anything). Bear in mind that more than one name can be assigned to an institution (dont worry about the redundance).
 
-However, how does the module detect which schema to use? This is thanks to the next resource
+Once this is done, we are ready to go!
 
-* Presence of your organization name in the
+## How to contribute with your schemas
+The way to add your schema to the repository is through Pull Request. Please fork the repository in your profile, clone it, move inside, and change to the develop branch. Once you have done this, add your schema to the `relecov-tools/relecov_tools/schema/insititution_schemas` folder, and add the identifier to the `relecov-tools/relecov_tools/schema/institution_to_schema.json` file. While doing this, please make sure that no other file is changed so that we don't accidaltally alter anything else. Once you have comitted and pushed the changes to your fork, please PR them to the develop branch in the main repository.
+
+## Annex: required fields 
 
 As of July 2022, the fields required are the following:
 
-in order to upload your samples and metadata to ENA and GISAID, 
+## Thanks
+We humbly thank this people for their work in the developlment and programming of this tool:
+
+* 
