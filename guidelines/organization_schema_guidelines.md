@@ -148,6 +148,9 @@ As of July 2022, the required fields are the following:
 
 
 ## Thanks
-We humbly thank this people for their work in the developlment and programming of this tool:
+We humbly thank the contribution of the following users for their work in the developlment and programming of this tool:
 
-* 
+* (Adrián Muñoz Barrera)[]
+* (Andreu Coello Pelegrín)[]
+* (Iván Bloise Sánchez)[]
+* (Víctor García Olivares)[]
