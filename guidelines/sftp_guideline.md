@@ -10,7 +10,7 @@ SFTP can be handy in all situations where sensitive data needs to be protected. 
 
 This protocol can be launched either as a command line or through a graphical user interface (GUI). In the first type of setup, the user has to type in specific command lines to generate the SFTP protocol, usually in a Linux environment. The latter option, that we recommend, makes use of a program that abstracts the use of SFTP visually for end users.
 
-For this purpose, we recommend (Filezilla)[https://filezilla-project.org/]. This software allows to connect to a FTP server, download and upload files and all with a friendly graphic layout.
+For this purpose, we recommend [Filezilla](https://filezilla-project.org/). This software allows to connect to a FTP server, download and upload files and all with a friendly graphic layout.
 
 ## Connectiong to Relecov server
 
