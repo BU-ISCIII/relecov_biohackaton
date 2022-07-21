@@ -46,15 +46,7 @@ Functions added to gisaid_upload.py:
 <a name="Email_advertisement"></a>
 ### Task 2: Email advertisement json_validation.py
 
-- Use FASTQ files from IonTorrent sequencing technology (PGM and/or S5) from the HERA project as benchmarking to test Viral-Recon. We have access to FASTQ files for ten known samples provided by BU-ISCIII. We want to test:
-  <ol>
-    <li>The raw FASTQ files into Viral-Recon.</li>
-    <li>The uBam files (some sort of raw FASTQ format file from IonTorrent).</li>
-    <li>The FASTQ files with some preprocessing filtering (BQ>20).</li>
-  </ol>
-- Test directly with the FASTQ files provided (if any) into Viral-Recon.
-- Set a BaseQuality filter (?) and other possible filters (depending on the noise within the input reads, specially in indels) in the config of Viral-Recon.
-- Sarai and Joan provided examples of FASTQ obtained with IonTorrent technologies.
+
 
   <p align="right" dir="auto">
    <a href="#home" title="Up">
@@ -70,13 +62,8 @@ Functions added to gisaid_upload.py:
 <a name="PipInstallation"></a>
 ### Task 3: Pip Installation
 
-- Check if a UBam-to-FASTQ is needed depending on the IonTorrent datasets provided.
-- Several outputs are expected: FASTQ (if the user knows how to download files in this format from the sequencing platform), uBAM and BAM.
-- We will need to test TMAP and IRMA.
 
-**Tools to preprocess the Ion Torrent FASTQ files in case they are provided as BAM or uBAM**
 
-**How to perform BAM-to-FASTQ**
 
 
 ...
